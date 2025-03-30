@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;ARM64;x64</Platforms>
+
+	  <!-- 启用单文件发布 -->
+	  <PublishSingleFile>true</PublishSingleFile>
+
+	  <!-- 启用依赖修剪（减少体积） -->
+	  <TrimUnusedCode>false</TrimUnusedCode>
+	  <PublishTrimmed>false</PublishTrimmed>
+
+	  <!-- 包含Native依赖（如适用） -->
+	  <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+
+	  <!-- 优化启动性能 -->
+	  <PublishReadyToRun>true</PublishReadyToRun>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Melanchall.DryWetMidi" Version="7.2.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="MIDIFormatConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MIDI格式转换器" Height="200" Width="400" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Margin="15">
+            <!--><TextBlock Text="MIDI格式转换器" FontWeight="Bold" FontSize="16"/><-->
+
+            <Grid Margin="0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="txtFilePath" IsReadOnly="True" VerticalAlignment="Center"/>
+                <Button Content="选择文件" Grid.Column="1" Margin="5,0" Click="SelectFile_Click"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <!--<TextBlock Text="最大内存限制 (MB):" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtMemoryLimit" Height="20" Width="100" Margin="5,0,0,0" ToolTip="输入数字，可带小数点"/>-->
+                
+            </StackPanel>
+            <Button  x:Name="btnConvert" Content="开始转换" Background="#4CAF50" Foreground="White" Width="Auto" Padding="10" Click="Convert_Click" Margin="15,10"/>
+
+
+            <ProgressBar x:Name="progressBar" Height="25" Minimum="0" Maximum="100" 
+                         Visibility="Collapsed" Margin="0,0"/>
+
+            <TextBlock x:Name="statusText" HorizontalAlignment="Center" Foreground="#666" 
+                       Text="就绪" Margin="0,0"/>
+        </StackPanel>
+        <Button Content="?" 
+        Click="HelpButton_Click"
+        Width="30" Height="30" 
+        HorizontalAlignment="Right" 
+        VerticalAlignment="Bottom" 
+        Margin="10"/>
+
+    </Grid>
+</Window>
